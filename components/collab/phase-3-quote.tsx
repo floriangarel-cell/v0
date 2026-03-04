@@ -179,7 +179,7 @@ function QuoteTable({
           </TableRow>
           <TableRow>
             <TableCell colSpan={readOnly ? 3 : 3} className="text-xs text-muted-foreground">
-              Commission CollabWithMe : 5% HT ({commission.toFixed(2)} EUR) — facturee a la marque en sus du montant TTC
+              Commission CollabWithMe : 5% HT ({commission.toFixed(2)} EUR) — deduite du versement au createur
             </TableCell>
             <TableCell colSpan={readOnly ? 2 : 3} />
           </TableRow>

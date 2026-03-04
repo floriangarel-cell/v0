@@ -172,10 +172,7 @@ function ContractPreview() {
                     <div className="flex justify-between mt-1"><span>TVA (20%)</span><span>{tva.toFixed(2)} EUR</span></div>
                     <div className="flex justify-between mt-1 font-bold"><span>Total TTC</span><span>{totalTTC.toFixed(2)} EUR</span></div>
                     <Separator className="my-2" />
-                    <div className="flex justify-between text-xs text-muted-foreground"><span>Commission CollabWithMe (5% HT) — facturee a la marque en sus</span><span>{commission.toFixed(2)} EUR</span></div>
-                    <Separator className="my-2" />
-                    <div className="flex justify-between text-xs font-medium"><span>Total a payer par la marque</span><span>{(totalTTC + commission).toFixed(2)} EUR</span></div>
-                    <div className="flex justify-between text-xs font-medium text-emerald-700"><span>Montant verse au createur</span><span>{totalTTC.toFixed(2)} EUR (integralite du TTC)</span></div>
+                    <div className="flex justify-between text-xs text-muted-foreground"><span>Commission CollabWithMe (5% HT)</span><span>{commission.toFixed(2)} EUR</span></div>
                   </div>
                 </div>
 

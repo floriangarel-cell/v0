@@ -39,8 +39,7 @@ export function Phase9Closing() {
   const tva = subtotalHT * 0.2
   const totalTTC = subtotalHT + tva
   const commission = subtotalHT * 0.05
-  const creatorPayout = totalTTC
-  const brandTotalPaid = totalTTC + commission
+  const creatorPayout = totalTTC - commission
 
   useEffect(() => {
     if (!state.fundsReleased) {
@@ -111,23 +110,18 @@ export function Phase9Closing() {
                   <span className="font-semibold text-emerald-700">Fonds liberes</span>
                 </div>
                 <div className="flex flex-col gap-1 text-sm">
-                  <div className="flex justify-between font-bold text-emerald-700">
-                    <span>Montant verse au createur</span>
-                    <span>{creatorPayout.toFixed(2)} EUR TTC (integralite)</span>
-                  </div>
-                  <Separator className="my-1" />
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Montant du contrat TTC</span>
+                    <span className="text-muted-foreground">Total TTC contrat</span>
                     <span>{totalTTC.toFixed(2)} EUR</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Commission CollabWithMe (5% HT) — payee par la marque</span>
-                    <span>{commission.toFixed(2)} EUR</span>
+                    <span className="text-muted-foreground">Commission CollabWithMe (5% HT)</span>
+                    <span>-{commission.toFixed(2)} EUR</span>
                   </div>
                   <Separator className="my-1" />
-                  <div className="flex justify-between font-medium">
-                    <span>Total paye par Maison Eclat</span>
-                    <span>{brandTotalPaid.toFixed(2)} EUR</span>
+                  <div className="flex justify-between font-bold text-emerald-700">
+                    <span>Montant verse au createur</span>
+                    <span>{creatorPayout.toFixed(2)} EUR</span>
                   </div>
                 </div>
                 <p className="mt-2 text-xs text-muted-foreground">
@@ -172,11 +166,11 @@ export function Phase9Closing() {
               <div className="flex flex-col gap-2">
                 <Button variant="outline" className="justify-start gap-2 text-sm">
                   <Download className="h-4 w-4" />
-                  Facture Lea Moreau → Maison Eclat (prestation — {totalTTC.toFixed(2)} EUR TTC)
+                  Facture Lea Moreau - Maison Eclat (prestation)
                 </Button>
                 <Button variant="outline" className="justify-start gap-2 text-sm">
                   <Download className="h-4 w-4" />
-                  Facture CollabWithMe → Maison Eclat (commission 5% HT — {commission.toFixed(2)} EUR)
+                  Facture CollabWithMe - Lea Moreau (commission 5% HT)
                 </Button>
               </div>
 
