@@ -233,6 +233,19 @@ export function Phase8Deliverables() {
               Delai de validation : 72h. Sans reponse, validation automatique.
             </p>
           )}
+
+          {state.viewMode === "creator" && (
+            <div className="mt-3 flex items-center gap-2 rounded-lg bg-emerald-50 border border-emerald-200 px-3 py-2 text-xs text-emerald-700">
+              <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
+              <span>
+                A la validation de tous les livrables, vous recevrez{" "}
+                <span className="font-bold">
+                  {(state.quoteLines.reduce((sum, l) => sum + l.unitPrice * l.quantity, 0) * 1.2).toFixed(2)} EUR TTC
+                </span>{" "}
+                (integralite, aucune deduction).
+              </span>
+            </div>
+          )}
         </CardContent>
       </Card>
 

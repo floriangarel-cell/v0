@@ -36,7 +36,7 @@ function BrandPaymentView() {
             </div>
             <h2 className="text-xl font-bold text-foreground">Paiement confirme</h2>
             <p className="text-sm text-muted-foreground">
-              Fonds places en escrow ({totalTTC.toFixed(2)} EUR TTC). La production peut commencer !
+              {totalTTC.toFixed(2)} EUR TTC places en escrow pour le createur + {commission.toFixed(2)} EUR de commission CollabWithMe. La production peut commencer !
             </p>
           </CardContent>
         </Card>
@@ -149,8 +149,11 @@ function CreatorPaymentView() {
             </div>
             <h2 className="text-xl font-bold text-foreground">Fonds en escrow</h2>
             <p className="text-sm text-muted-foreground">
-              Maison Eclat a place les fonds en escrow ({totalTTC.toFixed(2)} EUR TTC). Vous pouvez commencer la production !
+              Maison Eclat a place les fonds en escrow. Vous recevrez l{"'"}integralite de votre montant TTC a la validation des livrables.
             </p>
+            <div className="rounded-lg bg-emerald-50 border border-emerald-200 px-4 py-3 text-sm text-emerald-700">
+              <span className="font-semibold">Montant qui vous sera verse :</span> {totalTTC.toFixed(2)} EUR TTC (aucune deduction)
+            </div>
             <div className="flex items-start gap-2 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2 text-xs text-amber-700">
               <AlertTriangle className="h-3.5 w-3.5 mt-0.5 shrink-0" />
               <span>Completez votre verification KYC pour pouvoir recevoir les fonds.</span>
