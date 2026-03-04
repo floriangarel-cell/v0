@@ -45,6 +45,14 @@ export function HeroSection() {
           <p className="mt-6 text-sm text-muted-foreground">
             Pas de carte bancaire requise. Commission de 5% uniquement a la finalisation.
           </p>
+
+          <div className="mt-8 inline-flex items-center rounded-lg border border-primary/20 bg-primary/5 px-4 py-2.5">
+            <span className="text-sm text-muted-foreground mr-2">Nouveau :</span>
+            <Link href="/collab" className="text-sm font-semibold text-primary hover:underline flex items-center gap-1">
+              Decouvrir le flow de collaboration interactif
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
